@@ -34,3 +34,20 @@ if (isset($_POST['inputTemperatura'])) {
     header('location: ../temperatura.php');
     die();
 }
+
+if (isset($_GET['inputComprimento'])) {
+    $comprimento = $_GET['inputComprimento'];
+    if ($_GET['selectComprimentos'] == "centimentrosParaMetros") {
+        $resultado = $comprimento . " Centimetros para Metros é: " . centimentrosParaMetros($comprimento);
+    } else if ($_GET['selectComprimentos'] == "metrosParaCentimetros") {
+        $resultado = $comprimento . " Metros para Centimetros é: " . metrosParaCentimetros($comprimento);
+    } else if ($_GET['selectComprimentos'] == "metrosParaQuilometros") {
+        $resultado = $comprimento . " Metros para Quilômetros é: " . metrosParaQuilometros($comprimento);
+    } else {
+        $resultado = $comprimento . " Quilômetros para Metros é: " . quilometrosParaMetros($comprimento);
+    }
+    $_SESSION['resultado'] = $resultado;
+
+    header('location: ../conversor.php');
+    die();
+}

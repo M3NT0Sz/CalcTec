@@ -29,3 +29,24 @@ function fahrenheitParaCelsius($temperatura)
 {
     return (($temperatura - 32) / 1.8);
 }
+
+function centimentrosParaMetros($comprimento)
+{
+    return ($comprimento / 100);
+}
+
+function metrosParaCentimetros($comprimento)
+{
+    return ($comprimento * 100);
+}
+
+function metrosParaQuilometros($comprimento)
+{
+    return ($comprimento / 1000);
+}
+
+function quilometrosParaMetros($comprimento)
+{
+    return ($comprimento * 1000);
+}
+
