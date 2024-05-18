@@ -21,3 +21,16 @@ if (isset($_POST['inputNum1']) && isset($_POST['inputNum2'])) {
     header('location: ../index.php');
     die();
 }
+
+if (isset($_POST['inputTemperatura'])) {
+    $temperatura = $_POST['inputTemperatura'];
+    if ($_POST['selectTemperatura'] == "celsiusParaFahrenheit") {
+        $resultado = $temperatura . "°C em Fahrenheit é: " . celsiusParaFahrenheit($temperatura);
+    } else {
+        $resultado = $temperatura . "°F em Celsius é: " . fahrenheitParaCelsius($temperatura);
+    }
+    $_SESSION['resultado'] = $resultado;
+
+    header('location: ../temperatura.php');
+    die();
+}
